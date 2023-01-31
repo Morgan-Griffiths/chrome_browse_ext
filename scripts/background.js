@@ -3,12 +3,28 @@
 //     text: "OFF",
 //   });
 // });
-
 function clear() {
   console.log("clear");
   const test = document.querySelectorAll("*");
 
+  // const pintrest = document.querySelectorAll(
+  //   "[data-test-id='fullPageSignupModal']"
+  // );
+  // console.log(pintrest);
+  try {
+    const pintrest = document.querySelector(
+      '[data-test-id="fullPageSignupModal"]'
+    );
+    pintrest.remove();
+  } catch {}
   test.forEach(function (element) {
+    if (element) {
+    }
+    if (element.tagName === "STYLE") {
+      if (element.innerText.includes("overflow: hidden")) {
+        element.remove();
+      }
+    }
     if (element.style.overflow === "hidden") {
       element.style.overflow = "scroll";
     }
