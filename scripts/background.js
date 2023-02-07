@@ -17,9 +17,15 @@ function clear() {
     );
     pintrest.remove();
   } catch {}
+  try {
+    const atlantic = document.getElementById("slideup-paywall");
+    atlantic.remove();
+  } catch {}
+  try {
+    const darken = document.getElementById("darken-overlay");
+    darken.remove();
+  } catch {}
   test.forEach(function (element) {
-    if (element) {
-    }
     if (element.tagName === "STYLE") {
       if (element.innerText.includes("overflow: hidden")) {
         element.remove();
